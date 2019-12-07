@@ -11,15 +11,15 @@ namespace LdapParserTest
 		{
 			var stopwatch = new Stopwatch();
 
-			const int iterations = 100000;
+			const int iterations = 5000;
 			const string input =
 				"ldap://ds.example.com:389/dc=child,dc=example,dc=com?givenName,sn,cn?sub?(uid=john.doe)";
 
 
 			stopwatch.Start();
-			//for (var i = 0; i < iterations; i++)
+			for (var i = 0; i < iterations; i++)
 			{
-				Parser.ParseLdapPathAndGetDomain_v1(input);
+				Parser.ParseLdapPathAndGetDomain_v7(input);
 			}
 
 			stopwatch.Stop();
